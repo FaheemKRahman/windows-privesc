@@ -70,4 +70,20 @@ Command used:
 
 This indicates that the low-privileged user has **Full Control** over the directory containing the service executable.
 
+---
+
+### Enumerated all the services runnming from Progam Files
+
+<img width="682" height="82" alt="image" src="https://github.com/user-attachments/assets/a37b111d-307b-4f03-bcd1-3fd8600a18a8" />
+
+Filtered results to identify services with unquoted paths (paths containing spaces but no quotation marks):
+
+<img width="621" height="77" alt="image" src="https://github.com/user-attachments/assets/9ff86e4c-aab2-4522-b07e-316a0852de0f" />
+
+- The service binary path contains spaces
+- The path is not enclosed in quotation marks
+- This represents a potential unquoted service path vulnerability
+
+
+
 
