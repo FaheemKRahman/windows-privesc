@@ -1,12 +1,4 @@
-# Windows Privilege Escalation Lab
 
-## Overview
-
-This project documents a Windows privilege escalation lab focused on **service misconfigurations**. The goal is to demonstrate a clear, OSCP-aligned methodology for identifying privilege escalation opportunities on Windows systems **without immediately jumping to exploitation**.
-
-The lab targets a realistic scenario where a low-privileged local user is able to identify a service running with elevated privileges and determine that its service binary directory is writable, leading to a valid privilege escalation condition.
-
-This repository will be updated incrementally with screenshots and further write-ups as additional techniques are explored.
 
 ---
 
@@ -85,12 +77,26 @@ Filtered results to identify services with unquoted paths (paths containing spac
 - This represents a potential unquoted service path vulnerability
 
 
-## Assessing priviledge escalation
+### Assessing priviledge escalation
 Token-based privilege escalation was assessed by enumerating assigned privileges and integrity level. The current user operates at Medium Integrity and does not possess SeImpersonatePrivilege or SeAssignPrimaryTokenPrivilege.
 
 <img width="721" height="246" alt="image" src="https://github.com/user-attachments/assets/1393263f-f6ed-4826-9c06-66ee013570b5" />
 
 As a result, this rules out the possiblty of the privilege escalation is not possible here. 
+
+
+## Verifying control permissions of changed binary
+
+The original service executable was backed up and then removed to allow replacement. A benign payload (cmd.exe) was copied in its place, establishing control over code that will execute with the service’s SYSTEM privileges when started.
+
+<img width="832" height="112" alt="image" src="https://github.com/user-attachments/assets/bdc98c07-3a9c-4fad-8044-380156d4dcda" />
+
+This command was used to verify the access control permissions of the replaced service binary. The output confirms that the low-privileged user has Full Control over the executable, proving attacker control of code that will execute under the service’s SYSTEM context
+
+
+
+
+
 
 
 
