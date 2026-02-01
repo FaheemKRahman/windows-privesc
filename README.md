@@ -76,6 +76,8 @@ Filtered results to identify services with unquoted paths (paths containing spac
 - The path is not enclosed in quotation marks
 - This represents a potential unquoted service path vulnerability
 
+Although an unquoted service path was identified, exploitation was not pursued in this lab. The primary escalation vector remained direct service binary replacement due to weak file permissions.
+
 
 ### Assessing priviledge escalation
 Token-based privilege escalation was assessed by enumerating assigned privileges and integrity level. The current user operates at Medium Integrity and does not possess SeImpersonatePrivilege or SeAssignPrimaryTokenPrivilege.
