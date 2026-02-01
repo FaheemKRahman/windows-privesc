@@ -82,7 +82,7 @@ Token-based privilege escalation was assessed by enumerating assigned privileges
 
 <img width="721" height="246" alt="image" src="https://github.com/user-attachments/assets/1393263f-f6ed-4826-9c06-66ee013570b5" />
 
-As a result, this rules out the possiblty of the privilege escalation is not possible here. 
+This rules out token-based privilege escalation, shifting focus to service misconfiguration attacks.
 
 
 ## Verifying control permissions of changed binary
