@@ -1,4 +1,4 @@
-
+# Windows Privilege Escalation via Weak Service Binary Permissions
 
 ---
 
